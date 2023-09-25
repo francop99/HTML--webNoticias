@@ -1,0 +1,107 @@
+.card {
+ 
+  padding: auto;
+  text-align: center;
+ margin-top: 20px;
+  
+align-content: center;
+  align-items: center;
+  
+}
+
+body{
+
+  background: linear-gradient(to right, #0400ff, #ff0000); /* Degradado de izquierda a derecha */
+  
+  
+}
+
+#navbarNav{
+
+    margin-left: 30px;
+}
+
+main{
+    background-color: rgb(230, 230, 230);
+   
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+
+    border-radius: 5px;
+}
+
+footer{
+    background-color: rgb(230, 230, 230) ;
+    
+   
+}
+    
+.bi{
+background-color: black;
+}
+
+.contenedor {
+  display: flex;
+}
+
+/* Estilos para el sector izquierdo */
+.izquierda {
+  flex: 1; /* Ocupa todo el espacio disponible en la izquierda */
+  padding: 10px;
+  background-color: #f2f2f2; /* Color de fondo opcional */
+  margin: 5px;
+}
+
+/* Estilos para el sector del medio */
+.medio {
+  flex: 2; /* Ocupa el doble de espacio que el sector izquierdo */
+  padding: 10px;
+  background-color: #e0e0e0; /* Color de fondo opcional */
+  align-items: center;
+  padding-left: 200px;
+  padding-right: 200px;
+  margin: 5px;
+}
+
+/* Estilos para el sector derecho */
+.derecha {
+  flex: 1; /* Ocupa todo el espacio disponible en la derecha */
+  padding: 10px;
+  background-color: #f2f2f2; /* Color de fondo opcional */
+  margin: 5px;
+}
+
+/* Estilos para las listas */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin: 5px 0;
+}
+
+#tituloListaIndex{
+
+  background-color: rgb(233, 233, 233);
+}
+
+.card-title{
+  color: black;
+}
+
+.pagination{
+
+  margin-right: 50px;
+  margin-top: 100px;
+}
+
+.dropdown{
+  margin-left: 10px;
+}
+#navbarNav{
+
+  margin-left: 900px;
+}

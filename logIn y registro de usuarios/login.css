@@ -1,0 +1,39 @@
+
+.login{
+
+    width: 300px;
+    padding: auto;
+    text-align: center;
+    padding-left: 0px;
+
+    padding-right: 0px;
+    margin: auto;
+    margin-bottom: 0px;
+    margin-top: 50px;
+}
+
+.cart{
+
+    text-align: center;
+}
+
+main{
+    background-color: rgb(230, 230, 230);
+    margin-left: 350px;
+    margin-right: 350px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    padding-bottom: 100px;
+    padding-left: 30px;
+    padding-right: 30px;
+  
+    border-radius: 15px;
+}
+.cart{
+
+    margin-top: 50px;
+}
+
+body{
+    background-color: rgb(82, 82, 82);
+}

@@ -1,0 +1,52 @@
+.containerCrearNoticia {
+ 
+ padding-left: 300px;
+
+ padding-bottom: 15px;
+
+}
+
+body {
+  background-color: rgb(36, 66, 235);
+}
+
+.main {
+  background-color: rgb(230, 230, 230);
+  margin-left: 200px;
+  margin-right: 200px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  padding-bottom: 100px;
+  padding-left: 30px;
+  padding-right: 30px;
+
+  border-radius: 15px;
+}
+
+.card-body{
+    margin: 50px
+    
+}
+
+.table{
+    border-color: black;
+}
+
+.indicesTable{
+    background-color: rgb(189, 50, 50);
+}
+
+footer{
+    background-color: rgb(230, 230, 230) ;
+    margin-left: 50px;
+    margin-right: 50px;
+    border-radius: 15px;
+}
+
+.dropdown{
+  margin-left: 10px;
+}
+#navbarNav{
+
+  margin-left: 900px;
+}

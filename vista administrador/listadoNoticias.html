@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<html
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+>
+  <head>
+    <title>Adminitracion de noticias</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="listadoNoticias.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <h5>EggNews</h5>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="adminInicio.html">Home</a>
+              </li>
+              <div class="dropdown">
+                <a
+                  class="btn btn-secondary dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  perfil
+                </a>
+
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="/logout">Cerrar Sesion</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="dropdown">
+                <a
+                  class="btn btn-secondary dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Acciones
+                </a>
+
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="listadoNoticias.html"
+                      >Acciones Admin</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="main">
+      <div class="px-4 py-5 my-5 text-center">
+        <img
+          class="d-block mx-auto mb-4"
+          src="descarga.png"
+          alt=""
+          width="100"
+          height="100"
+        />
+        <h1 class="display-5 fw-bold text-body-emphasis">
+          Bienvenido periodista: User x
+        </h1>
+        <div class="col-lg-6 mx-auto">
+          <p class="lead mb-4">AREA DE GESTIÓN DE NOTICIAS</p>
+        </div>
+      </div>
+
+      <div class="containerCrearNoticia">
+        <div class="card" style="width: 18rem">
+          <div class="card-body" sec:authorize="hasRole('ADMIN')">
+            <h5 class="card-title">Crear Noticia >></h5>
+
+            <a href="noticiaForm.html" class="btn btn-primary">Ir</a>
+          </div>
+        </div>
+      </div>
+
+      <table class="table">
+        <thead class="indicesTable">
+          <tr>
+            <th scope="col">titulo</th>
+            <th scope="col" sec:authorize="hasRole('ADMIN')">Acciones</th>
+            <th scope="col" sec:authorize="hasRole('ADMIN')">Eliminar</th>
+          </tr>
+        </thead>
+        <tbody th:each="noticia: ${noticias}">
+          <tr>
+            <th th:text="${noticia.titulo}">noticia 1</th>
+            <td>
+              <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a
+                    sec:authorize="hasRole('ADMIN')"
+                    class="nav-link active"
+                    aria-current="page"
+                    th:href="@{/noticia/modificar/__${noticia.id}__}"
+                    >editar</a
+                  >
+                </li>
+              </ul>
+            </td>
+            <td>
+              <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a
+                    sec:authorize="hasRole('ADMIN')"
+                    class="nav-link active"
+                    aria-current="page"
+                    th:href="@{/noticia/eliminar/__${noticia.id}__}"
+                    >eliminar</a
+                  >
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th th:text="${noticia.titulo}">noticia 2</th>
+            <td>
+              <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a
+                    sec:authorize="hasRole('ADMIN')"
+                    class="nav-link active"
+                    aria-current="page"
+                    th:href="@{/noticia/modificar/__${noticia.id}__}"
+                    >editar</a
+                  >
+                </li>
+              </ul>
+            </td>
+            <td>
+              <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a
+                    sec:authorize="hasRole('ADMIN')"
+                    class="nav-link active"
+                    aria-current="page"
+                    th:href="@{/noticia/eliminar/__${noticia.id}__}"
+                    >eliminar</a
+                  >
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th th:text="${noticia.titulo}">noticia 3</th>
+            <td>
+              <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a
+                    sec:authorize="hasRole('ADMIN')"
+                    class="nav-link active"
+                    aria-current="page"
+                    th:href="@{/noticia/modificar/__${noticia.id}__}"
+                    >editar</a
+                  >
+                </li>
+              </ul>
+            </td>
+            <td>
+              <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a
+                    sec:authorize="hasRole('ADMIN')"
+                    class="nav-link active"
+                    aria-current="page"
+                    th:href="@{/noticia/eliminar/__${noticia.id}__}"
+                    >eliminar</a
+                  >
+                </li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+
+    <div class="container">
+      <footer class="py-3 my-4">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+          <li class="nav-item">
+            <a href="#" class="nav-link px-2 text-body-secondary">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link px-2 text-body-secondary">Features</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link px-2 text-body-secondary">Pricing</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link px-2 text-body-secondary">FAQs</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link px-2 text-body-secondary">About</a>
+          </li>
+        </ul>
+        <p class="text-center text-body-secondary">
+          &copy; noticias argentinas 2023
+        </p>
+      </footer>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

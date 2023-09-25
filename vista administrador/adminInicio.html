@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+>
+  <head>
+    <title>Inicio</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="indexAdmin.css" />
+  </head>
+  <body>
+    
+    <header>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <h5>EggNews</h5>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <div class="dropdown">
+                <a
+                  class="btn btn-secondary dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  perfil
+                </a>
+
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="/logout">Cerrar Sesion</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="dropdown">
+                <a
+                  class="btn btn-secondary dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Acciones
+                </a>
+
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="listadoNoticias.html">Acciones Admin</a></li>
+                </ul>
+              </div>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="contenedor">
+      <aside class="izquierda">
+        <!-- Lista de elementos para el sector izquierdo -->
+        <div
+          class="d-flex flex-column align-items-stretch flex-shrink-0 bg-body-tertiary"
+          style="width: 380px"
+        >
+          <a
+            href="#"
+            class="d-flex align-items-center flex-shrink-0 p-3 link-body-emphasis text-decoration-none border-bottom"
+            id="tituloListaIndex"
+          >
+            <span class="fs-5 fw-semibold">Noticias de la semana</span>
+          </a>
+          <div class="list-group list-group-flush border-bottom scrollarea">
+            <a
+              href="#"
+              class="list-group-item list-group-item-action py-3 lh-sm"
+              aria-current="true"
+            >
+              <div
+                class="d-flex w-100 align-items-center justify-content-between"
+              >
+                <strong class="mb-1"
+                  >Elecciones rumbo a las presidenciales.</strong
+                >
+                <small>11/11/11</small>
+              </div>
+              <div class="col-10 mb-1 small">
+                El gobierno actual tiene una imagen negativa, la oposición puede
+                ganar.
+              </div>
+            </a>
+            <a
+              href="#"
+              class="list-group-item list-group-item-action py-3 lh-sm"
+            >
+              <div
+                class="d-flex w-100 align-items-center justify-content-between"
+              >
+                <strong class="mb-1"
+                  >Noticia 1: Increíble descubrimiento científico</strong
+                >
+                <small class="text-body-secondary">11/11/11</small>
+              </div>
+              <div class="col-10 mb-1 small">
+                Científicos revelan un descubrimiento sorprendente en la
+                búsqueda de vida extraterrestre.
+              </div>
+            </a>
+
+            <!-- Noticia 2 -->
+            <a
+              href="#"
+              class="list-group-item list-group-item-action py-3 lh-sm"
+            >
+              <div
+                class="d-flex w-100 align-items-center justify-content-between"
+              >
+                <strong class="mb-1"
+                  >Noticia 2: Avances en la lucha contra el cambio
+                  climático</strong
+                >
+                <small class="text-body-secondary">11/11/11</small>
+              </div>
+              <div class="col-10 mb-1 small">
+                Nuevas tecnologías prometen un futuro más limpio y sostenible.
+              </div>
+            </a>
+
+            <!-- Noticia 3 -->
+            <a
+              href="#"
+              class="list-group-item list-group-item-action py-3 lh-sm"
+            >
+              <div
+                class="d-flex w-100 align-items-center justify-content-between"
+              >
+                <strong class="mb-1"
+                  >Noticia 3: Éxito en la misión espacial</strong
+                >
+                <small class="text-body-secondary">11/11/11</small>
+              </div>
+              <div class="col-10 mb-1 small">
+                La nave espacial regresa con muestras valiosas de un asteroide
+                distante.
+              </div>
+            </a>
+
+            <!-- Noticia 4 -->
+            <a
+              href="#"
+              class="list-group-item list-group-item-action py-3 lh-sm"
+            >
+              <div
+                class="d-flex w-100 align-items-center justify-content-between"
+              >
+                <strong class="mb-1"
+                  >Noticia 4: Avances en la medicina genética</strong
+                >
+                <small class="text-body-secondary">11/11/11</small>
+              </div>
+              <div class="col-10 mb-1 small">
+                Científicos logran un hito en la edición de genes humanos para
+                tratar enfermedades.
+              </div>
+            </a>
+
+            <!-- Noticia 5 -->
+            <a
+              href="#"
+              class="list-group-item list-group-item-action py-3 lh-sm"
+            >
+              <div
+                class="d-flex w-100 align-items-center justify-content-between"
+              >
+                <strong class="mb-1"
+                  >Noticia 5: Nuevas tecnologías de realidad virtual</strong
+                >
+                <small class="text-body-secondary">11/11/11</small>
+              </div>
+              <div class="col-10 mb-1 small">
+                La última generación de dispositivos de VR ofrece experiencias
+                impresionantes.
+              </div>
+            </a>
+
+            <!-- Noticia 6 -->
+            <a
+              href="#"
+              class="list-group-item list-group-item-action py-3 lh-sm"
+            >
+              <div
+                class="d-flex w-100 align-items-center justify-content-between"
+              >
+                <strong class="mb-1"
+                  >Noticia 6: Logros en la exploración submarina</strong
+                >
+                <small class="text-body-secondary">11/11/11</small>
+              </div>
+              <div class="col-10 mb-1 small">
+                Exploradores descubren nuevas especies en las profundidades del
+                océano.
+              </div>
+            </a>
+
+            <!-- Noticia 7 -->
+            <a
+              href="#"
+              class="list-group-item list-group-item-action py-3 lh-sm"
+            >
+              <div
+                class="d-flex w-100 align-items-center justify-content-between"
+              >
+                <strong class="mb-1"
+                  >Noticia 7: Innovaciones en la inteligencia artificial</strong
+                >
+                <small class="text-body-secondary">11/11/11</small>
+              </div>
+              <div class="col-10 mb-1 small">
+                La IA avanza a pasos agigantados, transformando diversas
+                industrias.
+              </div>
+            </a>
+
+            <!-- Noticia 8 -->
+            <a
+              href="#"
+              class="list-group-item list-group-item-action py-3 lh-sm"
+            >
+              <div
+                class="d-flex w-100 align-items-center justify-content-between"
+              >
+                <strong class="mb-1"
+                  >Noticia 8: Avances en la energía renovable</strong
+                >
+                <small class="text-body-secondary">11/11/11</small>
+              </div>
+              <div class="col-10 mb-1 small">
+                Nuevas tecnologías hacen que la energía limpia sea más accesible
+                que nunca.
+              </div>
+            </a>
+
+            <!-- Noticia 9 -->
+            <a
+              href="#"
+              class="list-group-item list-group-item-action py-3 lh-sm"
+            >
+              <div
+                class="d-flex w-100 align-items-center justify-content-between"
+              >
+                <strong class="mb-1"
+                  >Noticia 9: Descubrimientos arqueológicos fascinantes</strong
+                >
+                <small class="text-body-secondary">11/11/11</small>
+              </div>
+              <div class="col-10 mb-1 small">
+                Hallazgos en excavaciones revelan detalles sorprendentes de la
+                historia antigua.
+              </div>
+            </a>
+
+            <!-- Noticia 10 -->
+            <a
+              href="#"
+              class="list-group-item list-group-item-action py-3 lh-sm"
+            >
+              <div
+                class="d-flex w-100 align-items-center justify-content-between"
+              >
+                <strong class="mb-1"
+                  >Noticia 10: Innovación en la industria del transporte</strong
+                >
+                <small class="text-body-secondary">11/11/11</small>
+              </div>
+              <div class="col-10 mb-1 small">
+                Los vehículos eléctricos y autónomos están cambiando la forma en
+                que nos movemos.
+              </div>
+            </a>
+
+            <!-- Noticia 11 -->
+            <a
+              href="#"
+              class="list-group-item list-group-item-action py-3 lh-sm"
+            >
+              <div
+                class="d-flex w-100 align-items-center justify-content-between"
+              >
+                <strong class="mb-1"
+                  >Noticia 11: Avances en la medicina regenerativa</strong
+                >
+                <small class="text-body-secondary">11/11/11</small>
+              </div>
+              <div class="col-10 mb-1 small">
+                La regeneración de tejidos ofrece esperanzas para tratamientos
+                médicos revolucionarios.
+              </div>
+            </a>
+          </div>
+        </div>
+      </aside>
+      <section class="medio">
+        <!-- Contenido importante para el sector del medio -->
+        <div>
+          <h1 style="color: black">Notcias pincipales</h1>
+        </div>
+
+        <div class="card" style="width: 18rem" th:each="noticia: ${noticias}">
+          <img src="images.jfif" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title" th:text="${noticia.titulo}">
+              Noticas de hoy..
+            </h5>
+
+            <a href="noticia.html" class="btn btn-primary">Ir a la noticia</a>
+          </div>
+        </div>
+        <div class="card" style="width: 18rem" th:each="noticia: ${noticias}">
+          <img src="images.jfif" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title" th:text="${noticia.titulo}">
+              Noticas de hoy..
+            </h5>
+
+            <a href="noticia.html" class="btn btn-primary">Ir a la noticia</a>
+          </div>
+        </div>
+        <div class="card" style="width: 18rem" th:each="noticia: ${noticias}">
+          <img src="images.jfif" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title" th:text="${noticia.titulo}" >
+              Noticas de hoy..
+            </h5>
+
+            <a href="noticia.html" class="btn btn-primary">Ir a la noticia</a>
+          </div>
+        </div>
+        <div class="card" style="width: 18rem" th:each="noticia: ${noticias}">
+          <img src="images.jfif" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title" th:text="${noticia.titulo}">
+              Noticas de hoy..
+            </h5>
+
+            <a href="noticia.html" class="btn btn-primary">Ir a la noticia</a>
+          </div>
+        </div>
+
+        <nav aria-label="Page navigation example">
+          <ul class="pagination justify-content-center">
+            <li class="page-item enable">
+              <a class="page-link">Previous</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#">Next</a>
+            </li>
+          </ul>
+        </nav>
+      </section>
+    </main>
+
+    <div class="container">
+      <footer class="py-3 my-4">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+          <li class="nav-item">
+            <a href="#" class="nav-link px-2 text-body-secondary">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link px-2 text-body-secondary">Features</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link px-2 text-body-secondary">Pricing</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link px-2 text-body-secondary">FAQs</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link px-2 text-body-secondary">About</a>
+          </li>
+        </ul>
+        <p class="text-center text-body-secondary">
+          &copy; noticias argentinas 2023
+        </p>
+      </footer>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
